@@ -1,0 +1,37 @@
+pipeline{
+  agent{
+    node{
+    label 'master'
+    }
+  }
+  
+  
+  stages{
+    
+    stage('CFT started'){
+      steps{  
+      sh 'echo "started"'
+      sh 'pwd'
+      }
+    }
+    
+    stage('git clone'){
+      steps{
+        sh 'sudo rm -r *;sudo git clone https://github.com/Prashanth0797/Jenkins_sample.git'
+      }
+    }
+    stage('CFT validation'){
+    	sh 'echo "Validation started"'
+	sh 'aws cloudformation validate-template --template-body /var/lib/jenkins/workspace/Multi_pipe_master/Jenkins_sample/cerate_ec2_cft.json'
+	}
+    stage('CFT'){
+      steps{
+        sh 'ls'
+        sh 'pwd'
+        sh 'aws cloudformation deploy --template-file /var/lib/jenkins/workspace/Multi_pipe_master/Jenkins_sample/cerate_ec2_cft.json --stack-name createec2 --region us-east-1'
+      }
+    }
+    
+ }
+  
+}

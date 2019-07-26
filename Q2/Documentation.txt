@@ -1,0 +1,15 @@
+Part A
+1. Install Jenkins and java on the master node.
+2. Install JRE on the 2 slave nodes.
+3. Connect the 2 slave nodes to the master node by creating new public and private key.
+
+4. Create a git hub repository, and add the Jenkinsfile. Create a Jenkins pipeline and connect it to this Git repository. 
+Build this Pipeline
+
+Part B
+1. Add the cerate_ec2_cft.json file to the repo and add the code 'Part B Ec2_cerate_cft_Jenkins_file' to the Jenkinsfile in
+Github. 
+2. Create a pipeline and build it.
+
+Part C
+1.Add the 'Part C Ec2_cerate_cft_Jenkins_file' to the Jenkinsfile and build it in pipeline

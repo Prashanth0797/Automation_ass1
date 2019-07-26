@@ -1,0 +1,7 @@
+
+Implementing a Full CI/CD Pipeline
+
+
+i-0f887cd96c4257f7d
+
+ export PATH=$PATH:/opt/gradle/gradle-5.2.1/bin
